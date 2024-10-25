@@ -1,0 +1,362 @@
+:root {
+  --box-width: 8vw;
+  --box-height: calc(var(--box-width) / 2);
+  --intermediate-size: 10vw;
+  --primary-color: white;
+  --secondary-color: #7fce78;
+  --present-color: #dbc460;
+  --absent-color: #dae2e6;
+  --border-width: 0.08vw;
+  --margin-size: 0.3vw;
+  --spacing: 0.5vw; /* Further reduced spacing */
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-size: 1.5vw;
+  margin: 0;
+  padding: 0;
+}
+
+/* Line */
+hr {
+  width: 40vw;
+  margin: var(--spacing) auto; /* Reduced spacing below the title */
+}
+
+#title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3vw;
+  font-weight: bold;
+  letter-spacing: 0.02vw;
+  margin-bottom: var(--spacing); /* Reduced spacing below the title */
+}
+
+#board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: var(--primary-color);
+  margin-bottom: var(--spacing); /* Reduced spacing below the board */
+  height: auto;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  margin: var(--margin-size);
+}
+
+.box {
+  width: var(--box-width);
+  height: var(--box-height);
+  border: var(--border-width) solid #000;
+  margin: var(--margin-size);
+  perspective: 1000px;
+  backface-visibility: hidden;
+}
+
+.box img {
+  width: var(--box-width);
+  height: var(--box-height);
+  backface-visibility: hidden; /* Hide the back of the image during the flip */
+}
+
+.start img, 
+.product img {
+  width: var(--intermediate-size);
+  height: var(--intermediate-size);
+  margin: var(--margin-size);
+}
+
+.intermediate {
+  width: var(--intermediate-size);
+  height: var(--intermediate-size);
+  margin: var(--margin-size);
+  border: var(--border-width) solid #000;
+}
+
+.intermediate img {
+  width: var(--intermediate-size);
+  height: var(--intermediate-size);
+  transform: rotateY(180deg); 
+  display: block;
+}
+
+.text {
+  font-family: Helvetica;
+  margin-top: 0.5vw; /* Space between image and text */
+  font-size: 1vw; /* Adjust text size */
+  color: #000; /* Text color */
+  text-align: center; /* Center align text */
+  font-weight: bold;
+}
+
+.reference {
+  font-family: Helvetica;
+  margin-top: 0.5vw; /* Space between image and text */
+  font-size: 1vw; /* Adjust text size */
+  color: #000; /* Text color */
+  text-align: center; /* Center align text */
+  font-weight: bold;
+}
+
+
+/* Keyframes for 360-degree flip for boxes */
+@keyframes flip360 {
+  0% {
+      transform: rotateY(0deg);
+  }
+  100% {
+      transform: rotateY(360deg);
+  }
+}
+
+/* Keyframes for 180-degree flip for intermediates */
+@keyframes flip180 {
+  0% {
+      transform: rotateY(0deg);
+  }
+  100% {
+      transform: rotateY(180deg);
+  }
+}
+
+/* Apply 360-degree flip animation to boxes */
+.box.flip {
+  animation: flip360 0.75s forwards;
+  transform-style: preserve-3d;
+}
+
+/* Apply 180-degree flip animation to intermediates */
+.intermediate.flip {
+  animation: flip180 0.75s forwards;
+  transform-style: preserve-3d;
+}
+
+.correct {
+  background-color: var(--secondary-color);
+  color: black;
+  border-color: white;
+  border-radius: var(--border-width);
+}
+
+.present {
+  background-color: var(--present-color);
+  color: black;
+  border-color: white;
+  border-radius: var(--border-width);
+}
+
+.absent {
+  background-color: var(--absent-color);
+  color: black;
+  border-color: white;
+  border-radius: var(--border-width);
+}
+
+#keyboard {
+  width: 65vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: var(--spacing) auto; /* Reduced spacing and centered the keyboard */
+  padding: 0;
+  pointer-events: auto;
+}
+
+.reagent-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: var(--margin-size);
+}
+
+.reagent img, 
+.enter-button img, 
+.delete-button img {
+  width: var(--box-width);
+  height: var(--box-height);
+  margin: var(--margin-size);
+  cursor: grab;
+  transition: background-color 0.3s;
+  pointer-events: none; /* Ensure pointer events are enabled */
+}
+
+/* Modal style */
+.modal {
+  display: none;  /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dimming effect */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.gear-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.gear-icon img {
+  width: 40px;
+  height: 40px;
+}
+
+.about-icon {
+  position: absolute;
+  top: 10px;
+  right: 60px;
+  cursor: pointer;
+}
+
+.about-icon img {
+  width: 40px;
+  height: 40px;
+}
+
+.modal-buttons {
+  display: flex; /* Use flexbox for layout */
+  justify-content: flex-end; /* Align buttons to the right */
+  gap: 10px; /* Space between buttons */
+}
+
+button {
+  padding: 10px 15px; /* Add some padding */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Round the corners */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+#saveSettings {
+  background-color: #4CAF50; /* Green background for save button */
+  color: white; /* White text */
+}
+
+#cancelButton {
+  background-color: #f44336; /* Red background for cancel button */
+  color: white;
+}
+
+#closeButton {
+  background-color: black; /* Red background for close button */
+  color: white;
+  border: none; /* No border */
+  padding: 10px 15px; /* Padding for the button */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.aboutModal {
+  display: none;  /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dimming effect */
+  justify-content: center;
+  align-items: center;
+
+  max-width: 1000px; /* Optional: limit max width */
+  height: auto; /* Allow height to adjust based on content */
+  max-height: 80%; /* Optional: limit max height */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  transform: translate(-50%, -50%); /* Center the modal */
+  overflow-y: auto; /* Allow scrolling if content is too tall */
+  padding: 20px; /* Add padding for content spacing */
+}
+
+#gameOverModal {
+  display: none;  /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dimming effect */
+  justify-content: center;
+  align-items: center;
+}
+
+
+.notification-container {
+  position: fixed;
+  top: 20px; /* Starting position */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.notification {
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 5px 0; /* Space between notifications */
+  transition: opacity 0.5s ease; /* Optional: for fade out effect */
+  opacity: 1;
+  animation: vibrate 0.3s; /* Add vibration effect */
+}
+
+@keyframes vibrate {
+  0% { transform: translateX(-2px); }
+  25% { transform: translateX(2px); }
+  50% { transform: translateX(-2px); }
+  75% { transform: translateX(2px); }
+  100% { transform: translateX(0); }
+}
+
+.notification.fade-out {
+  opacity: 0; /* Class to fade out the notification */
+}
+
+
+.scrippslogo {
+  width: 400px;           /* Set the width of the logos */
+  height: auto;
+}
+
+.scrippslogo-container {
+  position: absolute; /* Position the logo container absolutely */
+    bottom: 10px; /* Distance from the bottom of the page */
+    left: 10px; /* Distance from the right of the page */
+    display: flex; /* Align logos in a row */
+    gap: 10px; /* Space between logos */
+}
+
+.shenvilogo {
+  width: 400px;           /* Set the width of the logos */
+  height: auto;
+}
+
+.shenvilogo-container {
+  position: absolute; /* Position the logo container absolutely */
+    bottom: 10px; /* Distance from the bottom of the page */
+    right: 10px; /* Distance from the right of the page */
+    display: flex; /* Align logos in a row */
+    gap: 10px; /* Space between logos */
+}

@@ -1,0 +1,117 @@
+<html>
+<head>
+  <title>Synthordle</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="wordle.css">
+</head>
+
+<body>
+  <br>
+  <h1 id="title">Synthordle</h1>
+  <br>
+  <hr>
+  <br>
+  <!-- Modal for settings -->
+  <div id="settingsModal" class="modal">
+    <div class="modal-content">
+        <h2>Game Settings</h2>
+        <label for="reactionID">Reaction ID:</label>
+        <input type="number" id="reactionID" min="0" value="0" class="reaction-id-input" style="width: 80px;">
+        <button id="randomizeButton" class="randomize-button" onclick="randomizeReactionId()">Randomize</button>
+        <br><br>
+        <label for="numGuesses">Number of guesses (1-5):</label>
+        <input type="number" id="numGuesses" min="1" max="5" value="4">
+        <br><br>
+        <label for="direction">Direction:</label>
+        <select id="direction">
+          <option value="retro">Retro</option>
+          <option value="forward">Forward</option>
+        </select>
+        <br><br>
+        <div class="modal-buttons"></div>
+        <button id="saveSettings">Save</button>
+        <button id="cancelButton">Cancel</button>
+    </div>
+  </div>
+
+  <div id="aboutModal" class="modal">
+    <div class="modal-content">
+    </p>
+    <h2>Synthordle</h2>
+    <p>
+      Identify a synthetic pathway for a target product by selecting the correct sequence of reaction conditions.
+      <h3>Customize Game Settings </h3>
+        <p>
+          <ul style="list-style-type:none;">
+                <li><strong>Reaction Pathway (ID):</strong> Choose a specific reaction.</li>
+                <li><strong>Number of Guesses:</strong> Set the number of attempts.</li>
+                <li><strong>Direction:</strong> Select "Forward" or "Retro-" Synthetic Analysis.</li>
+            </ul>
+            
+        </p>
+        
+        <h3>Gameplay Instructions</h3>
+      <ol>
+            <li><strong>Select Reagents:</strong> Use the displayed keyboard to choose reaction conditions.</li>
+            <li><strong>Submit a Guess:</strong> Click "Enter" after filling all four boxes in a row.</li>
+            <li><strong>Receive Feedback:</strong>
+                <ul style="list-style-type:none;">
+                    <li><span class="correct">Green</span> - Correct reagent and position.</li>
+                    <li><span class="present">Yellow</span> - Correct reagent but wrong position.</li>
+                    <li><span class="absent">Gray</span> - Incorrect reagent.</li>
+                </ul>
+            </li>
+        </ol>
+      <p>
+        Created by: Kevin Zong, Jonah Luo, Ryan Shenvi*
+      </p>
+      <p>
+        Contact: kzong@scripps.edu, jonahluo22@gmail.com, rshenvi@scripps.edu
+      </p>
+      <button id="closeButton">Close</button>
+        
+    </div>
+</div>
+
+ 
+
+  <!-- Modal for game over-->
+  <div id="gameOverModal" display="flex">
+    <div class="modal-content">
+        <h2 id="gameOverMessage"></h2>
+        <button id="playAgainButton">Play Again</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="notificationContainer" class="notification-container"></div>
+
+  <!-- Gear Icon for settings button -->
+  <div id="gearIcon" class="gear-icon">
+    <img src="gear.png" alt="Settings">
+  </div>
+
+  <!-- About Icon for HowtoPlay button -->
+  <div id="aboutIcon" class="about-icon">
+    <img src="about.png" alt="Settings">
+  </div>
+
+  <div id="board"></div>
+  <div id="keyboard"></div>
+  <script src="wordle.js"></script>
+
+</body>
+
+<div class="scrippslogo-container">
+  <img src="Scrippslogo.png" alt="Logo 1 Description" class="scrippslogo" />
+</div>
+
+<div class="shenvilogo-container">
+  <img src="Shenvilogo.png" alt="Logo 2 Description" class="shenvilogo" />
+</div>
+
+
+
+</html>
+
