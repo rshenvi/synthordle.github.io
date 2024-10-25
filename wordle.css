@@ -335,28 +335,26 @@ button {
 }
 
 
-.scrippslogo {
-  width: 400px;           /* Set the width of the logos */
-  height: auto;
+.scrippslogo,
+.shenvilogo {
+  width: 15vw; /* Set width relative to viewport width for scaling */
+  max-width: 400px; /* Maximum width limit */
+  min-width: 100px; /* Minimum width limit */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.scrippslogo-container,
+.shenvilogo-container {
+  position: absolute;
+  bottom: 1vw; /* Adjusts bottom position based on viewport size */
+  display: flex;
+  gap: 1vw; /* Responsive gap between logos */
 }
 
 .scrippslogo-container {
-  position: absolute; /* Position the logo container absolutely */
-    bottom: 10px; /* Distance from the bottom of the page */
-    left: 10px; /* Distance from the right of the page */
-    display: flex; /* Align logos in a row */
-    gap: 10px; /* Space between logos */
-}
-
-.shenvilogo {
-  width: 400px;           /* Set the width of the logos */
-  height: auto;
+  left: 1vw; /* Scales position from the left */
 }
 
 .shenvilogo-container {
-  position: absolute; /* Position the logo container absolutely */
-    bottom: 10px; /* Distance from the bottom of the page */
-    right: 10px; /* Distance from the right of the page */
-    display: flex; /* Align logos in a row */
-    gap: 10px; /* Space between logos */
+  right: 1vw; /* Scales position from the right */
 }
