@@ -2,7 +2,7 @@
   "reactions": [
     {
       "ID": "0",
-      "sequence": ["mCPBA", "TMABHOAc4", "LDACBr4", "DavisOxaziridine"],
+      "sequence": ["mCPBA", "TMABHOAc3", "LDACBr4", "DavisOxaziridine"],
       "reference": "Nat. Chem. 7, 604–607 (2015)."
     },
     {
