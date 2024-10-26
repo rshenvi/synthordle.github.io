@@ -55,6 +55,11 @@
       "sequence": ["aminophenylaziridine", "Bu3SnHAIBN", "Swern", "MeMgBrTiCl4"],
       "reference" : "Bull. Korean Chem. Soc. 1999, Vol. 20, No. 3"
     }
+    {
+      "ID": "11",
+      "sequence": ["rxn11_0", "rxn11_1", "rxn11_2", "rxn11_0"],
+      "reference" : "J. Am. Chem. Soc. 2006, 128, 7136-7137"
+    }
     
     
   ],
@@ -68,6 +73,7 @@
                "OsO4", "TsClPyr", "KOtBu", "methylphosphoylide",
                "propenyllithium", "PDC", "EtAlCl2", "CH2OMe2AlCl",
                "TiCl4CH2Br2", "tBuLiDMF", "NaBH4", "triethylorthoacetate",
-               "aminophenylaziridine", "Bu3SnHAIBN", "Swern", "MeMgBrTiCl4"
+               "aminophenylaziridine", "Bu3SnHAIBN", "Swern", "MeMgBrTiCl4",
+               "rxn11_0", "rxn11_1", "rxn11_2"
               ]
 }
