@@ -54,11 +54,25 @@
       "ID": "10",
       "sequence": ["aminophenylaziridine", "Bu3SnHAIBN", "Swern", "MeMgBrTiCl4"],
       "reference" : "Bull. Korean Chem. Soc. 1999, Vol. 20, No. 3"
+    },
+    {
+      "ID": "11",
+      "sequence": ["rxn11_0", "rxn11_1", "rxn11_2", "rxn11_0"],
+      "reference" : "J. Am. Chem. Soc. 2006, 128, 7136-7137"
+    },
+    {
+      "ID": "12",
+      "sequence": ["rxn12_0", "rxn12_1", "rxn12_2", "rxn12_3"],
+      "reference" : "J. Am. Chem. Soc. 2023, 145, 3903−3908"
+    },
+    {
+      "ID": "13",
+      "sequence": ["rxn13_0", "rxn13_1", "rxn13_2", "NaBH4"],
+      "reference" : "J. Am. Chem. Soc. 2004, 126, 16300-16301"
     }
-    
-    
+
   ],
-  "reagents": ["LDACBr4", "DavisOxaziridine", "TMABHOAc3", "mCPBA", 
+  "reagents": ["LDACBr4", "DavisOxaziridine", "TMABHOAc3", "mCPBA",
                "AnaeriobicMukaiyama", "IsoprenylOAc", "CrO3TBAIO4", "Ms2ODMAPEt3N",
                "mesitylene", "DMP", "CH2OKOH", "MsClEt3NDBU",
                "PhSHAIBN", "POCl3Pyr", "SnCl4Methacrolein", "NaBH4",
@@ -68,6 +82,8 @@
                "OsO4", "TsClPyr", "KOtBu", "methylphosphoylide",
                "propenyllithium", "PDC", "EtAlCl2", "CH2OMe2AlCl",
                "TiCl4CH2Br2", "tBuLiDMF", "NaBH4", "triethylorthoacetate",
-               "aminophenylaziridine", "Bu3SnHAIBN", "Swern", "MeMgBrTiCl4"
+               "aminophenylaziridine", "Bu3SnHAIBN", "Swern", "MeMgBrTiCl4",
+               "rxn11_0", "rxn11_1", "rxn11_2", "rxn12_0", "rxn12_1", "rxn12_2", "rxn12_3",
+               "rxn13_0", "rxn13_1", "rxn13_2"
               ]
 }
