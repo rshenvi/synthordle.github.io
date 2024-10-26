@@ -64,7 +64,7 @@
       "ID": "12",
       "sequence": ["rxn12_0", "mesitylene", "rxn12_2", "rxn12_3"],
       "reference" : "J. Am. Chem. Soc. 2023, 145, 3903−3908"
-    }
+    },
     {
       "ID": "13",
       "sequence": ["rxn13_0", "rxn13_1", "rxn13_2", "NaBH4"],
@@ -83,6 +83,7 @@
                "propenyllithium", "PDC", "EtAlCl2", "CH2OMe2AlCl",
                "TiCl4CH2Br2", "tBuLiDMF", "NaBH4", "triethylorthoacetate",
                "aminophenylaziridine", "Bu3SnHAIBN", "Swern", "MeMgBrTiCl4",
-               "rxn11_0", "rxn11_1", "rxn11_2"
+               "rxn11_0", "rxn11_1", "rxn11_2", "rxn12_0", "rxn12_2", "rxn12_3",
+               "rxn13_0", "rxn13_1", "rxn13_2"
               ]
 }
