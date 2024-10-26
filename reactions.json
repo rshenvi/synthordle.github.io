@@ -63,9 +63,13 @@
     {
       "ID": "12",
       "sequence": ["rxn12_0", "mesitylene", "rxn12_2", "rxn12_3"],
-      "reference" : "Bull. Korean Chem. Soc. 1999, Vol. 20, No. 3"
+      "reference" : "J. Am. Chem. Soc. 2023, 145, 3903−3908"
     }
-
+    {
+      "ID": "13",
+      "sequence": ["rxn13_0", "rxn13_1", "rxn13_2", "NaBH4"],
+      "reference" : "J. Am. Chem. Soc. 2004, 126, 16300-16301"
+    }
 
   ],
   "reagents": ["LDACBr4", "DavisOxaziridine", "TMABHOAc3", "mCPBA",
